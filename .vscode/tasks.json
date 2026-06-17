@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build EvolutionGame",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "if not exist \"${workspaceFolder}\\build\" mkdir \"${workspaceFolder}\\build\" && g++ -std=c++11 -g -O0 -DUNICODE -D_UNICODE -Iinclude src/main.cpp src/ui/Window.cpp -o \"${workspaceFolder}\\build\\EvolutionGame.exe\" -mwindows -luser32 -lgdi32 -lkernel32 -lcomctl32"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
